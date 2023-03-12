@@ -133,6 +133,14 @@ input:checked~.meme-label span:last-child {
     max-height: 100vh;
   }
 
+  .memes:hover .meme .meme-label:active {
+    color: #11E;
+  }
+
+  .memes:hover .meme .meme-label:active .meme-inner img {
+    filter: brightness(80%);
+  }
+
   .meme:hover .meme-label span:last-child {
     transform: rotate(135deg);
     transition: transform 200ms ease-in-out;
