@@ -40,14 +40,20 @@ input {
   line-height: 160%;
   font-weight: 700;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   color: #11E;
   transition: color 200ms ease-in-out;
 }
 
+.meme-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .meme-label span:last-child {
   display: none;
+  transition: transform 200ms ease-in-out;
 }
 
 .meme-inner {
@@ -65,12 +71,13 @@ input:checked~.meme-label {
   color: #000;
 }
 
-input:checked~.meme-inner {
+input:checked~.meme-label .meme-inner {
   max-height: 100vh;
 }
 
 input:checked~.meme-label span:last-child {
   transform: rotate(135deg);
+  transition: transform 200ms ease-in-out;
 }
 
 
@@ -102,7 +109,7 @@ input:checked~.meme-label span:last-child {
   .meme-label span:last-child {
     display: inline;
     opacity: 0;
-    transition: opacity 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
   }
 
   .memes:hover {
@@ -124,5 +131,6 @@ input:checked~.meme-label span:last-child {
 
   .meme:hover .meme-label span:last-child {
     transform: rotate(135deg);
+    transition: transform 200ms ease-in-out;
   }
 }
