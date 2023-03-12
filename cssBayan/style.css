@@ -43,11 +43,11 @@ input {
   justify-content: space-between;
   align-items: center;
   color: #11E;
+  transition: color 200ms ease-in-out;
 }
 
 .meme-label span:last-child {
   display: none;
-  transition: transform 300ms ease-in-out;
 }
 
 .meme-inner {
@@ -84,5 +84,45 @@ input:checked~.meme-label span:last-child {
 
   .meme-label {
     font-size: 1.25rem;
+  }
+}
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 63.9em) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .meme-label {
+    font-size: 1.1rem;
+  }
+
+  .meme-label span:last-child {
+    display: inline;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .memes:hover {
+    cursor: pointer;
+  }
+
+  .memes:hover .meme .meme-label {
+    cursor: pointer;
+    color: #000;
+  }
+
+  .memes:hover .meme .meme-label span:last-child {
+    opacity: 1;
+  }
+
+  .meme:hover .meme-inner {
+    max-height: 100vh;
+  }
+
+  .meme:hover .meme-label span:last-child {
+    transform: rotate(135deg);
   }
 }
