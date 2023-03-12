@@ -64,7 +64,7 @@ input {
 .meme-inner img {
   display: block;
   margin: 1rem auto;
-  max-width: 80%;
+  max-width: 15rem;
 }
 
 input:checked~.meme-label {
@@ -91,6 +91,10 @@ input:checked~.meme-label span:last-child {
 
   .meme-label {
     font-size: 1.25rem;
+  }
+
+  .meme-inner img {
+    max-width: 20rem;
   }
 }
 
