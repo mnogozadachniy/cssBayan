@@ -1,0 +1,148 @@
+/* MOBILE FIRST */
+
+.main {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0eaaa;
+}
+
+.container {
+  width: 90%;
+}
+
+input {
+  display: none;
+}
+
+.title {
+  line-height: 180%;
+  border-bottom: 0.3vh solid #aaa;
+  text-align: center;
+}
+
+.memes {
+  overflow: hidden;
+}
+
+.meme {
+  border-bottom: 0.3vh solid #aaa;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.meme:last-child {
+  border-bottom: none;
+}
+
+.meme-label {
+  font-size: 1.5rem;
+  line-height: 160%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  color: #11E;
+  transition: color 200ms ease-in-out;
+}
+
+.meme-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meme-label span:last-child {
+  display: none;
+  transition: transform 200ms ease-in-out;
+}
+
+.meme-inner {
+  transition: all 300ms ease-in-out;
+  max-height: 0;
+}
+
+.meme-inner img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 15rem;
+}
+
+input:checked~.meme-label {
+  color: #000;
+}
+
+input:checked~.meme-label .meme-inner {
+  max-height: 100vh;
+}
+
+input:checked~.meme-label span:last-child {
+  transform: rotate(135deg);
+  transition: transform 200ms ease-in-out;
+}
+
+
+/* TABLET  */
+
+@media screen and (min-width: 40.1em) {
+  .title {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .meme-label {
+    font-size: 1.25rem;
+  }
+
+  .meme-inner img {
+    max-width: 20rem;
+  }
+}
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 63.9em) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .meme-label {
+    font-size: 1.1rem;
+  }
+
+  .meme-label span:last-child {
+    display: inline;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+
+  .memes:hover {
+    cursor: pointer;
+  }
+
+  .memes:hover .meme .meme-label {
+    cursor: pointer;
+    color: #000;
+  }
+
+  .memes:hover .meme .meme-label span:last-child {
+    opacity: 1;
+  }
+
+  .meme:hover .meme-inner {
+    max-height: 100vh;
+  }
+
+  .memes:hover .meme .meme-label:active {
+    color: #11E;
+  }
+
+  .memes:hover .meme .meme-label:active .meme-inner img {
+    filter: brightness(80%);
+  }
+
+  .meme:hover .meme-label span:last-child {
+    transform: rotate(135deg);
+    transition: transform 200ms ease-in-out;
+  }
+}
